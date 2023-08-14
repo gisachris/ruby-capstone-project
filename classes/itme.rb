@@ -8,6 +8,11 @@ class Item
     @publish_date = publish_date
   end
 
+  def add_label(label)
+    @label = label
+    @label.add_item(self)
+  end
+
   def can_be_archived?
     current_year = Date.today.year
     publish_year = Date.parse(@publish_date).year
