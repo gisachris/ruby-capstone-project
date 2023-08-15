@@ -15,8 +15,8 @@ class Game < Item
     self.class.all_games << self
   end
 
-  def self.all_games
-    @all_games
+  class << self
+    attr_reader :all_games
   end
 
   def can_be_archived?

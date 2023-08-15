@@ -16,8 +16,8 @@ class Author
     item.author = self
   end
 
-  def self.all_authors
-    @all_authors
+  class << self
+    attr_reader :all_authors
   end
 
   def to_h

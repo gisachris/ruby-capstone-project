@@ -1,6 +1,7 @@
 require_relative 'author'
 require_relative 'game'
 require 'json'
+require 'fileutils'
 
 class GameAuthorStorage
   DATA_DIRECTORY = '../../data'.freeze
@@ -9,7 +10,7 @@ class GameAuthorStorage
     @all_games = Game.all_games
     @all_authors = Author.all_authors
 
-    Dir.mkdir(DATA_DIRECTORY) unless Dir.exist?(DATA_DIRECTORY)
+    FileUtils.mkdir_p(DATA_DIRECTORY)
 
     games_file = File.open("#{DATA_DIRECTORY}/games.json", 'w')
     games_data = @all_games.map(&:to_h)
