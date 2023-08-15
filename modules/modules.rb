@@ -11,7 +11,6 @@ module Modules
   include PreserveData
   include LoadData
 
-
   def save_collections
     save_book
     save_label
