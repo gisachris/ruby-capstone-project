@@ -1,5 +1,5 @@
 class Author
-  attr_reader :items, :id, :all_authors
+  attr_reader :items, :id, :all_authors, :first_name, :last_name
 
   @all_authors = []
 

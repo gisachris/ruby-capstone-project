@@ -1,9 +1,9 @@
-require '../item'
+require_relative '../item'
 require 'date'
 
 class Game < Item
   attr_accessor :multiplayer, :last_played, :author
-  attr_reader :all_games
+  attr_reader :all_games, :multiplayer, :publish_date, :last_played
 
   @all_games = []
 
