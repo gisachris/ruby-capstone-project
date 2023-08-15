@@ -13,6 +13,11 @@ class Item
     @label.add_item(self)
   end
 
+  def add_author(author)
+    @author = author
+    author.add_item(self)
+  end
+
   def can_be_archived?
     current_year = Date.today.year
     publish_year = Date.parse(@publish_date).year
