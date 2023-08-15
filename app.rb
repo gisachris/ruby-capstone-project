@@ -3,13 +3,14 @@ require_relative 'classes/book/label'
 require_relative 'modules/modules'
 
 class App
-  attr_accessor :books
+  attr_accessor :books, :label
 
   include Modules
 
   def initialize
     @books = []
     @label = []
+    load_collections
   end
 
   def run(options)
@@ -22,6 +23,12 @@ class App
       add_book
     else
       puts 'Thank you for using this app!'
+      save_and_exit
     end
+  end
+
+  def save_and_exit
+    save_collections
+    exit
   end
 end
