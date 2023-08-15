@@ -26,10 +26,15 @@ class GameAuthorStorage
   def read_from_storage
     games_data = read_json_data("#{DATA_DIRECTORY}/games.json")
     authors_data = read_json_data("#{DATA_DIRECTORY}/authors.json")
-
+  
+    if games_data.nil? && authors_data.nil?
+      return
+    end
+  
     populate_games(games_data)
     populate_authors(authors_data)
   end
+  
 
   private
 

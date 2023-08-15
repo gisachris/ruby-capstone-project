@@ -7,7 +7,7 @@ class Game < Item
 
   @all_games = []
 
-  def initialize(multiplayer, publish_date, last_played_at, author, id = nil)
+  def initialize(multiplayer, publish_date, last_played_at, author = nil, id = nil)
     super(publish_date, id)
     @multiplayer = multiplayer
     @last_played = Date.parse(last_played_at)

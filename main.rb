@@ -3,6 +3,7 @@ require_relative 'app'
 class Main
   def initialize
     @app = App.new
+    #@app.read_game_storage
     prompt
   end
 
@@ -13,6 +14,7 @@ class Main
       option = take_input
       @app.run(option)
       break if option == 10
+      #@app.write_game_storage
     end
   end
 

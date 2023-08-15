@@ -7,5 +7,7 @@ module ListAuthors
         puts "#{i}) first_name: #{author.first_name}, last_name:#{author.last_name}"
       end
     end
+    puts 'press enter to continue'
+    gets.chomp
   end
 end
