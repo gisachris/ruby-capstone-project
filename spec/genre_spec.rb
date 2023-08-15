@@ -11,8 +11,8 @@ describe 'Testing Genre classes' do
     end
 
     it 'Testing add_items method' do
-      @item = Item.new('2020-01-01')
-      @genre.add_item(@item)
+      @item = Item.new('2023-03-03')
+      @genre.add_items(@item)
       expect(@genre.items).to include(@item)
     end
   end

@@ -6,7 +6,7 @@ describe 'Testing MusicAlbum class' do
     @musicalbum = MusicAlbum.new('2023-07-12', true)
   end
 
-  context 'Testing  MusicAlbum instance and Method' do
+  context 'Testing MusicAlbum instance and Method' do
     it 'Testing on spotify instance' do
       expect(@musicalbum.on_spotify).to be true
     end
