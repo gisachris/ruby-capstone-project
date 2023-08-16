@@ -12,7 +12,11 @@ module AddGame
   def multiplayer
     puts 'is this a multiplayer game..?[Y/N]'
     answer = gets.chomp
-    print 'wrong choice!' unless answer.downcase == 'y' || answer.downcase == 'n'
+    if answer == 'y'
+      return true
+    else
+      return false
+    end
   end
 
   def published_date
@@ -27,9 +31,11 @@ module AddGame
 
   def select_author
     list_all_authors
-    puts 'select from the above authors by number (not id):'
+    puts 'select from the above authors by number (not id) if non click enter:'
     answer = gets.chomp
-    return if answer.empty?
+    if answer.empty?
+      return 
+    end
     find_author(answer)
   end
 

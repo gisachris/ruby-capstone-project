@@ -24,14 +24,17 @@ class Game < Item
   end
 
   def to_h
-    {
+    game_hash = {
       multiplayer: @multiplayer,
       publish_date: @publish_date.to_s,
       last_played: @last_played.to_s,
-      author_id: @author.id,
       id: @id
     }
-  end
+    
+    game_hash[:author_id] = @author.id unless @author.nil?
+    
+    game_hash
+  end  
 
   private
 

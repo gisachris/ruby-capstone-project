@@ -2,8 +2,9 @@ require_relative 'app'
 
 class Main
   def initialize
+    @game_store = GameAuthorStorage.new()
+    @game_store.read_from_storage
     @app = App.new
-    #@app.read_game_storage
     prompt
   end
 
@@ -13,8 +14,10 @@ class Main
       display_options
       option = take_input
       @app.run(option)
-      break if option == 10
-      #@app.write_game_storage
+      if option == 10
+      @game_store.write_to_storage
+      break 
+      end
     end
   end
 

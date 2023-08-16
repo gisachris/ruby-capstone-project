@@ -10,8 +10,8 @@ module ListGames
           puts "#{i}) multiplayer: #{game.multiplayer}, author: #{game.author.first_name} #{game.author.last_name}, published on: #{game.publish_date}, last played: #{game.last_played}"
         end
       end
-      puts 'Press enter to continue'
-      gets.chomp
     end
+    puts 'Press enter to continue'
+    gets.chomp
   end
 end

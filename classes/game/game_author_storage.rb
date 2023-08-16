@@ -4,7 +4,7 @@ require 'json'
 require 'fileutils'
 
 class GameAuthorStorage
-  DATA_DIRECTORY = '../../data'.freeze
+  DATA_DIRECTORY = 'data'.freeze
 
   def write_to_storage
     @all_games = Game.all_games
@@ -21,29 +21,37 @@ class GameAuthorStorage
     authors_data = @all_authors.map(&:to_h)
     authors_file.puts(JSON.pretty_generate(authors_data))
     authors_file.close
+    puts 'Storing game data successfully'
+    puts 
+    puts 'press enter to continue'
+    gets.chomp
   end
 
   def read_from_storage
     games_data = read_json_data("#{DATA_DIRECTORY}/games.json")
     authors_data = read_json_data("#{DATA_DIRECTORY}/authors.json")
-  
+    
     if games_data.nil? && authors_data.nil?
+      puts "No game data found in JSON files."
       return
     end
-  
-    populate_games(games_data)
-    populate_authors(authors_data)
+
+    populate_games(games_data) unless games_data.empty?
+    populate_authors(authors_data) unless authors_data.empty?
   end
+  
   
 
   private
 
   def read_json_data(file_path)
-    return [] unless File.exist?(file_path)
-
-    json_data = File.read(file_path)
-    JSON.parse(json_data)
-  end
+    if File.exist?(file_path)
+      json_data = File.read(file_path)
+      JSON.parse(json_data)
+    else
+      return []
+    end
+  end  
 
   def populate_authors(authors_data)
     authors_data.each do |author_data|

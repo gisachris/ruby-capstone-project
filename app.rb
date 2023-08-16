@@ -15,7 +15,6 @@ class App
     @label = []
     @authors_list = Author.all_authors
     @games_list = Game.all_games
-    @game_store = GameAuthorStorage.new()
   end
 
   def run(options)
@@ -37,11 +36,11 @@ class App
     end
   end
 
-  def read_game_storage
-    @game_store.read_from_storage
-  end
+  # def read_game_storage
+  #   @game_store.read_from_storage
+  # end
 
-  def write_game_storage
-    @game_store.write_to_storage
-  end
+  # def write_game_storage
+  #   @game_store.write_to_storage
+  # end
 end
