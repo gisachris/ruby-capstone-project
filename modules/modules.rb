@@ -24,7 +24,7 @@ module Modules
   include DisplayMusic
   include DisplayGenres
   include Storage
- 
+
 
   def save_collections
     save_book

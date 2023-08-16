@@ -5,7 +5,7 @@
 #   def initialize(publish_date, on_spotify)
 #     super(publish_date)
 #     @on_spotify = on_spotify
-#     @genres = [] 
+#     @genres = []
 #   end
 
 #   def can_be_archived?

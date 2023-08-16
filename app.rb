@@ -20,7 +20,7 @@ class App
     @books = []
     @label = []
     @genres = []
-    @music_albums = []   
+    @music_albums = []
     @authors_list = Author.all_authors
     @games_list = Game.all_games
     load_collections
@@ -40,14 +40,19 @@ class App
       list_all_authors
     when 6
       list_all_sources
+    end
+  end
+
+  def run_more_than6(option)
+    case option
     when 7
-      list_all_genres 
+      list_all_genres
     when 8
       add_book
     when 9
       add_music
     when 10
-      add_new_game   
+      add_new_game
     else
       puts 'Thank you for using this app!'
       store_games
@@ -64,5 +69,3 @@ class App
     exit
   end
 end
-
- 
