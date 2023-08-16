@@ -22,7 +22,7 @@ class GameAuthorStorage
     authors_file.puts(JSON.pretty_generate(authors_data))
     authors_file.close
     puts 'Storing game data successfully'
-    puts 
+    puts
     puts 'press enter to continue'
     gets.chomp
   end
@@ -30,28 +30,26 @@ class GameAuthorStorage
   def read_from_storage
     games_data = read_json_data("#{DATA_DIRECTORY}/games.json")
     authors_data = read_json_data("#{DATA_DIRECTORY}/authors.json")
-    
+
     if games_data.nil? && authors_data.nil?
-      puts "No game data found in JSON files."
+      puts 'No game data found in JSON files.'
       return
     end
 
     populate_games(games_data) unless games_data.empty?
     populate_authors(authors_data) unless authors_data.empty?
   end
-  
-  
+
+
 
   private
 
   def read_json_data(file_path)
-    if File.exist?(file_path)
-      json_data = File.read(file_path)
-      JSON.parse(json_data)
-    else
-      return []
-    end
-  end  
+    return [] unless File.exist?(file_path)
+
+    json_data = File.read(file_path)
+    JSON.parse(json_data)
+  end
 
   def populate_authors(authors_data)
     authors_data.each do |author_data|

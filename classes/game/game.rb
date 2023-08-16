@@ -3,7 +3,7 @@ require 'date'
 
 class Game < Item
   attr_accessor :multiplayer, :last_played, :author
-  attr_reader :all_games, :multiplayer, :publish_date, :last_played
+  attr_reader :all_games, :publish_date
 
   @all_games = []
 
@@ -30,11 +30,11 @@ class Game < Item
       last_played: @last_played.to_s,
       id: @id
     }
-    
+
     game_hash[:author_id] = @author.id unless @author.nil?
-    
+
     game_hash
-  end  
+  end
 
   private
 

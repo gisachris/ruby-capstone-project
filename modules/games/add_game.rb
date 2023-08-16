@@ -5,18 +5,17 @@ module AddGame
     last_played_date = last_played
     selected_author = select_author
 
-    new_game = Game.new(multiplayer_choice, publish_date, last_played_date, selected_author)
-    puts "New game added succesfully"
+    Game.new(multiplayer_choice, publish_date, last_played_date, selected_author)
+    puts 'New game added succesfully'
   end
 
   def multiplayer
     puts 'is this a multiplayer game..?[Y/N]'
     answer = gets.chomp
-    if answer == 'y'
-      return true
-    else
-      return false
-    end
+    return true if answer == 'y'
+
+
+    false
   end
 
   def published_date
@@ -33,9 +32,8 @@ module AddGame
     list_all_authors
     puts 'select from the above authors by number (not id) if non click enter:'
     answer = gets.chomp
-    if answer.empty?
-      return 
-    end
+    return if answer.empty?
+
     find_author(answer)
   end
 
@@ -43,11 +41,9 @@ module AddGame
     placement_index = placement_index.to_i
     selected_author = Author.all_authors[placement_index]
 
-    if selected_author.nil?
-      puts 'Author not found at that position!'
-      return false
-    else
-      return selected_author
-    end
+    return selected_author unless selected_author.nil?
+
+    puts 'Author not found at that position!'
+    false
   end
 end
