@@ -2,8 +2,6 @@ require_relative 'app'
 
 class Main
   def initialize
-    @game_store = GameAuthorStorage.new
-    @game_store.read_from_storage
     @app = App.new
     prompt
   end
@@ -15,7 +13,7 @@ class Main
       option = take_input
       @app.run(option)
       if option == 10
-        @game_store.write_to_storage
+        @app.store_games
         break
       end
     end
@@ -39,7 +37,7 @@ class Main
     print 'Enter a number: '
     option = gets.chomp.to_i
     while option.nil? || option < 1 || option > 10
-      puts 'Please enter a number between 1 and 4!'
+      puts 'Please enter a number between 1 and 10!'
       print 'Enter a number: '
       option = gets.chomp.to_i
     end

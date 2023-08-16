@@ -14,7 +14,6 @@ module AddGame
     answer = gets.chomp
     return true if answer == 'y'
 
-
     false
   end
 

@@ -34,13 +34,13 @@ class GameAuthorStorage
     if games_data.nil? && authors_data.nil?
       puts 'No game data found in JSON files.'
       return
+    else
+      puts 'Data loading..!'
     end
 
     populate_games(games_data) unless games_data.empty?
     populate_authors(authors_data) unless authors_data.empty?
   end
-
-
 
   private
 
