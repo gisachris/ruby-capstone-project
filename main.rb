@@ -27,10 +27,11 @@ class Main
     puts "4. - List all labels (e.g. 'Gift', 'New)"
     puts "5. - List all authors (e.g. 'Stephen King')"
     puts "6. - List all sources (e.g. 'From a friend', 'Online shop')"
-    puts '7. - Add book'
-    puts '8. - Add a music album'
-    puts '9. - Add a game'
-    puts '10. - Exit'
+    puts "7. - List all genres (e.g. 'Comedy', 'Thriller')"
+    puts '8. - Add book'
+    puts '9. - Add a music album'
+    puts '10. - Add a game'
+    puts '11. - Exit'
   end
 
   def take_input
