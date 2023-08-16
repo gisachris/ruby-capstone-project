@@ -107,7 +107,7 @@ Example command:
 - GitHub: [@githubhandle](https://github.com/Enoisong)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/enobong-isong/)
 
-👤 **Enobong Isong**
+👤 **gisa chris**
 
 - GitHub: [@githubhandle](https://github.com/gisachris)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/gisa-chris/)
