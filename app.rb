@@ -14,6 +14,7 @@ class App
   include AddMusic
   include DisplayGenres
 
+
   def initialize
     @game_store = GameAuthorStorage.new
     @game_store.read_from_storage
@@ -40,13 +41,8 @@ class App
       list_all_authors
     when 6
       list_all_sources
-    end
-  end
-
-  def run_more_than6(option)
-    case option
     when 7
-      list_all_genres
+      display_all_genres
     when 8
       add_book
     when 9
