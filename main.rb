@@ -12,7 +12,10 @@ class Main
       display_options
       option = take_input
       @app.run(option)
-      break if option == 10
+      if option == 10
+        @app.store_games
+        break
+      end
     end
   end
 
@@ -34,7 +37,7 @@ class Main
     print 'Enter a number: '
     option = gets.chomp.to_i
     while option.nil? || option < 1 || option > 10
-      puts 'Please enter a number between 1 and 4!'
+      puts 'Please enter a number between 1 and 10!'
       print 'Enter a number: '
       option = gets.chomp.to_i
     end
