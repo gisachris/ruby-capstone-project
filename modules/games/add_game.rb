@@ -35,17 +35,17 @@ module AddGame
     if answer == 1
       list_all_authors_not_smooth
       puts 'select from the above authors by number (not id) if non click enter:'
-    answer = gets.chomp
-    return if answer.empty?
+      answer = gets.chomp
+      return if answer.empty?
 
-    find_author(answer)
+      find_author(answer)
     elsif answer == 2
-      newauthor = add_new_author
-      return newauthor
+      add_new_author
+
     else
       print 'choice was incorrect!'
-      return
-    end      
+      nil
+    end
   end
 
   def find_author(placement_index)
