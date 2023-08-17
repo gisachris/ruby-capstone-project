@@ -28,12 +28,24 @@ module AddGame
   end
 
   def select_author
-    list_all_authors
-    puts 'select from the above authors by number (not id) if non click enter:'
+    alert = author_num
+    print "select from published authors list(1) #{alert}, or create new one(2): "
+    answer = gets.chomp.to_i
+
+    if answer == 1
+      list_all_authors_not_smooth
+      puts 'select from the above authors by number (not id) if non click enter:'
     answer = gets.chomp
     return if answer.empty?
 
     find_author(answer)
+    elsif answer == 2
+      newauthor = add_new_author
+      return newauthor
+    else
+      print 'choice was incorrect!'
+      return
+    end      
   end
 
   def find_author(placement_index)
@@ -44,5 +56,10 @@ module AddGame
 
     puts 'Author not found at that position!'
     false
+  end
+
+  def author_num
+    author_array = Author.all_authors
+    print '(currently empty)' if author_array.empty?
   end
 end
