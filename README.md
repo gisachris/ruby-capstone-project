@@ -14,6 +14,7 @@
     - [Setup](#setup)
     - [Usage](#usage)
     - [Run tests](#run-tests)
+    - [Video presentation](#video-presentation)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -90,6 +91,11 @@ Example command:
 ```sh
   rspec spec
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### video-presentation
+This application has a detailed video presentation which you can find [here](https://drive.google.com/file/d/19TMQ2DB_G2f7o1QYvI_Qpm7XhYfgxhoR/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
