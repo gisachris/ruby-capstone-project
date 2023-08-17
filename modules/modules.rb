@@ -2,6 +2,7 @@ require_relative 'book/addbook'
 require_relative 'book/displaybook'
 require_relative 'book/displaylabel'
 require_relative 'games/add_game'
+require_relative 'games/add_author'
 require_relative 'games/list_games'
 require_relative 'games/list_authors'
 require_relative 'book/load_book_label'
@@ -16,6 +17,7 @@ module Modules
   include DisplayBook
   include DisplayLabel
   include AddGame
+  include AddAuthor
   include ListGames
   include ListAuthors
   include PreserveData
@@ -37,5 +39,11 @@ module Modules
     load_books
     load_genres
     load_music_albums
+  end
+
+  def list_all_sources
+    puts 'this feature has not yet been implemented!'
+    print 'press enter to continue..'
+    gets.chomp
   end
 end

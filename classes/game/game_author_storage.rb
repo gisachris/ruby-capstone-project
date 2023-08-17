@@ -28,8 +28,8 @@ class GameAuthorStorage
   end
 
   def read_from_storage
-    games_data = read_json_data("#{DATA_DIRECTORY}/games.json")
     authors_data = read_json_data("#{DATA_DIRECTORY}/authors.json")
+    games_data = read_json_data("#{DATA_DIRECTORY}/games.json")
 
     if games_data.nil? && authors_data.nil?
       puts 'No game data found in JSON files.'
@@ -38,8 +38,8 @@ class GameAuthorStorage
       puts 'Data loading..!'
     end
 
-    populate_games(games_data) unless games_data.empty?
     populate_authors(authors_data) unless authors_data.empty?
+    populate_games(games_data) unless games_data.empty?
   end
 
   private
