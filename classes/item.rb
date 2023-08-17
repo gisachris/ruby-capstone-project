@@ -9,6 +9,10 @@ class Item
     @archived = false
   end
 
+  def add_genre(genre)
+    @genre = genre
+  end
+
   def add_label(label)
     @label = label
     @label.add_item(self)

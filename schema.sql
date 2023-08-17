@@ -39,3 +39,17 @@ CREATE TABLE games (
   author INT REFERENCES authors(id)
   PRIMARY KEY(id)
 )
+
+CREATE TABLE music_album (
+  id INT GENERATED NOT NULL,
+  on_spotify BOOLEAN,
+  publish_date DATE,
+  archived BOOLEAN
+  genre_id INT REFERENCES genre(id)   
+):
+
+CREATE TABLE genre (
+  id INT PRIMARY KEY NOT NULL,
+  name VARCHAR(150),
+  items TEXT []
+);
