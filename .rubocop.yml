@@ -4,6 +4,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    
 
   DisplayCopNames: true
 
@@ -11,6 +12,8 @@ Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
   Max: 20
+Metrics/CyclomaticComplexity:
+  Enabled: false
 Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:

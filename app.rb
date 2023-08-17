@@ -15,7 +15,6 @@ class App
   include AddMusic
   include DisplayGenres
 
-
   def initialize
     @game_store = GameAuthorStorage.new
     @game_store.read_from_storage
@@ -30,32 +29,28 @@ class App
 
   def run(options)
     case options
-    when 1
-      display_books
-    when 2
-      display_all_music_albums
-    when 3
-      list_all_games
-    when 4
-      display_labels
-    when 5
-      list_all_authors
-    when 6
-      list_all_sources     
-    when 7
-      display_all_genres
-    when 8
-      add_book
-    when 9
-      add_music
-    when 10
-      add_new_game
+    when 1 then display_books
+    when 2 then display_all_music_albums
+    when 3 then list_all_games
+    when 4 then display_labels
+    when 5 then list_all_authors
+    when 6 then list_all_sources
+    when 7 then display_all_genres
+    when 8 then add_book
+    when 9 then add_music
+    when 10 then add_new_game
     else
-      puts 'Thank you for using this app!'
-      store_games
-      save_music
-      save_and_exit
+      exit_app
     end
+  end
+
+  private
+
+  def exit_app
+    puts 'Thank you for using this app!'
+    store_games
+    save_music
+    save_and_exit
   end
 
   def store_games
@@ -66,4 +61,4 @@ class App
     save_collections
     exit
   end
-end 
+end

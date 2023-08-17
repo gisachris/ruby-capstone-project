@@ -1,24 +1,3 @@
-# require_relative 'app'
-
-# class Main
-#   def initialize
-#     @app = App.new
-#     prompt
-#   end
-
-#   def prompt
-#     puts 'Catalogue of things!'
-#     loop do
-#       display_options
-#       option = take_input
-#       @app.run(option)
-#       if option == 10
-#         @app.store_games
-#         break
-#       end
-#     end
-#   end
-
 require_relative 'app'
 
 class Main
