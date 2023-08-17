@@ -32,8 +32,7 @@ module Storage
     music_albums_hash = load_file('data/music_albums.json')
 
     music_albums_hash.each do |music|
-      music_obj = MusicAlbum.new(publish_date: music['publish_date'], on_spotify: music['on_spotify'],
-                                 id: music['id'])
+      music_obj = MusicAlbum.new(music['publish_date'], music['on_spotify'])
       genre_obj = @genres.find { |genre| genre.name == music['genre'] }
       music_obj.add_genre(genre_obj)
       @music_albums << music_obj

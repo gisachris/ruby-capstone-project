@@ -1,3 +1,24 @@
+# require_relative 'app'
+
+# class Main
+#   def initialize
+#     @app = App.new
+#     prompt
+#   end
+
+#   def prompt
+#     puts 'Catalogue of things!'
+#     loop do
+#       display_options
+#       option = take_input
+#       @app.run(option)
+#       if option == 10
+#         @app.store_games
+#         break
+#       end
+#     end
+#   end
+
 require_relative 'app'
 
 class Main
@@ -12,8 +33,8 @@ class Main
       display_options
       option = take_input
       @app.run(option)
-      if option == 10
-        @app.store_games
+      if option == 11
+        @app.store_music
         break
       end
     end
@@ -37,8 +58,8 @@ class Main
   def take_input
     print 'Enter a number: '
     option = gets.chomp.to_i
-    while option.nil? || option < 1 || option > 10
-      puts 'Please enter a number between 1 and 10!'
+    while option.nil? || option < 1 || option > 11
+      puts 'Please enter a number between 1 and 11!'
       print 'Enter a number: '
       option = gets.chomp.to_i
     end

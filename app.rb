@@ -11,6 +11,7 @@ class App
   attr_accessor :books, :label
 
   include Modules
+  include Storage
   include AddMusic
   include DisplayGenres
 
@@ -40,7 +41,7 @@ class App
     when 5
       list_all_authors
     when 6
-      list_all_sources
+      list_all_sources     
     when 7
       display_all_genres
     when 8
@@ -52,6 +53,7 @@ class App
     else
       puts 'Thank you for using this app!'
       store_games
+      save_music
       save_and_exit
     end
   end
@@ -64,4 +66,4 @@ class App
     save_collections
     exit
   end
-end
+end 
