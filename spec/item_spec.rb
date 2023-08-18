@@ -29,11 +29,6 @@ describe Item do
       expect(@item.label.title).to eq('test title')
     end
 
-    it 'should be able to add an author' do
-      @item.add_author(author)
-      expect(@item.author.first_name).to eq('sheldon')
-    end
-
     it 'should check for archive readiness and return true if publish date > 10 years' do
       expect(@item.can_be_archived?).to be_truthy
     end

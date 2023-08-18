@@ -12,11 +12,11 @@ class Main
       display_options
       option = take_input
       @app.run(option)
-      if option == 10
-        @app.store_games
-        @app.store_music
-        break
-      end
+      next unless option == 10
+
+      @app.store_games
+      @app.store_music
+      break
     end
   end
 
