@@ -40,10 +40,4 @@ module Modules
     load_genres
     load_music_albums
   end
-
-  def list_all_sources
-    puts 'this feature has not yet been implemented!'
-    print 'press enter to continue..'
-    gets.chomp
-  end
 end

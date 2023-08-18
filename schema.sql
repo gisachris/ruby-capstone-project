@@ -15,10 +15,12 @@ CREATE TABLE labels (
 CREATE TABLE books (
   id INT GENERATED ALWAYS AS IDENTITY,
   publish_date DATE,
-  label_id INT REFERENCES labels(id),
   can_be_archived BOOLEAN,
   cover_state VARCHAR(255),
   publisher VARCHAR(255),
+  genre_id INT NULL REFERENCES genres(id) ON DELETE CASCADE,
+  author_id INT NULL REFERENCES authors(id) ON DELETE CASCADE,
+  label_id INT NULL REFERENCES labels(id) ON DELETE CASCADE,
   PRIMARY KEY(id)
 );
 
@@ -36,7 +38,9 @@ CREATE TABLE games (
   publish_date DATE,
   last_played DATE
   can_be_archived BOOLEAN,
-  author INT REFERENCES authors(id)
+  genre_id INT NULL REFERENCES genres(id) ON DELETE CASCADE,
+  author_id INT NULL REFERENCES authors(id) ON DELETE CASCADE,
+  label_id INT NULL REFERENCES labels(id) ON DELETE CASCADE,
   PRIMARY KEY(id)
 )
 
@@ -44,8 +48,10 @@ CREATE TABLE music_album (
   id INT GENERATED NOT NULL,
   on_spotify BOOLEAN,
   publish_date DATE,
-  archived BOOLEAN
-  genre_id INT REFERENCES genre(id)   
+  archived BOOLEAN 
+  genre_id INT NULL REFERENCES genres(id) ON DELETE CASCADE,
+  author_id INT NULL REFERENCES authors(id) ON DELETE CASCADE,
+  label_id INT NULL REFERENCES labels(id) ON DELETE CASCADE, 
 ):
 
 CREATE TABLE genre (

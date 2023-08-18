@@ -34,11 +34,10 @@ class App
     when 3 then list_all_games
     when 4 then display_labels
     when 5 then list_all_authors
-    when 6 then list_all_sources
-    when 7 then display_all_genres
-    when 8 then add_book
-    when 9 then add_music
-    when 10 then add_new_game
+    when 6 then display_all_genres
+    when 7 then add_book
+    when 8 then add_music
+    when 9 then add_new_game
     else
       exit_app
     end
